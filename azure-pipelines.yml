@@ -13,5 +13,6 @@ variables:
   imageName: 'sample-script-app:$(build.buildId)'
 
 steps:
+- script: mvn clean package
 - script: docker build -f Dockerfile -t $(imageName) .
   displayName: 'Docker build'
